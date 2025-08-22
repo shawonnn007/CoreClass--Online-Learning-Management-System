@@ -1,13 +1,13 @@
 <?php
 include('config.php');
 
-// Handle form submission
+
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
     $student_id = intval($_POST['student_id']);
     $course_id  = intval($_POST['course_id']);
     $grade      = $conn->real_escape_string($_POST['grade']);
 
-    // Validate course ID
+    
     $check = $conn->query("SELECT course_title FROM courses WHERE course_id = $course_id");
     if ($check->num_rows === 0) {
         echo "<p style='color:red;'>❌ Invalid Course ID.</p>";
