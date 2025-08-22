@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'student') {
     header("Location: login.html");
     exit;
@@ -32,7 +31,10 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'student') {
 
   <nav>
     <a href="enrollment_module.php">Enroll in a Course</a>
-    <a href="enrollment_module.php">My Enrollments</a>
+    <a href="studentenroll_view.php">My Enrollments</a>
+    <a href="submit_quiz.php">Submit Quiz Answer</a>
+    <a href="view_grades.php">View My Grades</a>
+    <a href="forum_student.php">Course Discussions</a>
     <a href="logout.php">Log Out</a>
   </nav>
 
