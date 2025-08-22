@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       
             switch ($user['role']) {
                 case 'student':
+                    $_SESSION['student_id'] = $user['id'];
                     header("Location: dashboard_student.php");
                     exit;
                 case 'instructor':
